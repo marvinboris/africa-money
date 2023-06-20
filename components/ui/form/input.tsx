@@ -16,7 +16,7 @@ export default function Input({ label, prepend, ...props }: Props) {
         {prepend ? <div className="w-[18px] flex-none">{prepend}</div> : null}
 
         <input
-          className="appearance-none block flex-1 w-full bg-transparent placeholder:text-gray-400 outline-none"
+          className="appearance-none block flex-1 w-full text-xs lg:text-base bg-transparent placeholder:text-gray-400 outline-none"
           {...props}
         />
       </div>
