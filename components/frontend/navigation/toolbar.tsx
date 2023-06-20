@@ -42,7 +42,7 @@ const MobileNavItem = ({ item, close }: MobileNavItemProps) => (
 
 export default function Toolbar() {
   return (
-    <Popover className="sticky z-30 top-0 bg-white py-4">
+    <Popover className="sticky z-30 top-0 backdrop-blur bg-white supports-backdrop-blur:bg-white/95 py-4">
       {({ close }) => (
         <>
           <div className="container flex items-center">
