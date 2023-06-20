@@ -6,7 +6,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
     <div>
       <Toolbar />
 
-      <main>{children}</main>
+      {children}
 
       <Footer />
     </div>
