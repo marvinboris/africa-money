@@ -124,14 +124,14 @@ type ServiceProps = {
   children: string;
 };
 const Service = (props: ServiceProps) => (
-  <div className="flex flex-col items-center gap-3">
+  <div className="flex flex-col items-center gap-3 lg:w-[200px]">
     <div className="flex-none h-12">
       <Image
         src={"/images/" + props.icon + ".svg"}
         alt={props.children}
         width={36}
         height={36}
-        className="w-auto h-9 object-contain"
+        className="w-auto h-9 lg:h-[50px] object-contain"
       />
     </div>
 
@@ -145,18 +145,20 @@ type InfoProps = {
   children: string;
 };
 const Info = (props: InfoProps) => (
-  <div className="rounded-lg bg-white px-4 py-6 flex flex-col gap-3 text-center">
+  <div className="rounded-lg bg-white px-4 lg:px-10 py-6 lg:py-10 flex flex-col gap-3 text-center lg:w-[400px]">
     <Image
       src={"/images/" + props.icon + ".svg"}
       alt={props.title}
       width={80}
       height={80}
-      className="h-20 w-auto flex-none mx-auto"
+      className="h-20 lg:h-[100px] w-auto flex-none mx-auto"
     />
 
-    <div className="text-xl font-bold">{props.title}</div>
+    <div className="text-xl lg:text-[28px] font-bold lg:mt-4">
+      {props.title}
+    </div>
 
-    <div className="text-xs">{props.children}</div>
+    <div className="text-xs lg:text-base">{props.children}</div>
   </div>
 );
 
@@ -169,7 +171,7 @@ type TestimonialProps = {
 const Testimonial = (props: TestimonialProps) => (
   <div
     className={classNames(
-      "px-7 py-5 flex flex-col items-center text-center h-full rounded-lg",
+      "px-7 py-5 lg:py-10 flex flex-col items-center text-center h-full rounded-lg",
       props.index % 2 === 0 ? "bg-gray-100" : "bg-orange-peel"
     )}
   >
@@ -183,13 +185,17 @@ const Testimonial = (props: TestimonialProps) => (
       />
     </div>
 
-    <p className="mt-6 text-xs w-[230px]">{props.children}</p>
+    <p className="mt-6 text-xs lg:text-base w-[230px] lg:w-full">
+      {props.children}
+    </p>
 
-    <div className="mt-3 text-xs font-semibold">{props.name}</div>
+    <div className="mt-3 lg:mt-5 text-xs lg:text-base font-semibold">
+      {props.name}
+    </div>
   </div>
 );
 
-export default function Home() {
+export default function Page() {
   const [data, setData] = React.useState<typeof _data | null>(null);
 
   React.useEffect(() => {
@@ -199,20 +205,20 @@ export default function Home() {
   return data ? (
     <main>
       <header>
-        <div className="container pt-8 pb-[72px]">
-          <section>
-            <h2 className="text-[32px] font-extrabold text-zinc-900">
+        <div className="container pt-8 pb-[72px] lg:pt-[120px] lg:pb-[120px] lg:flex justify-between items-center">
+          <section className="lg:w-[600px] flex-none">
+            <h2 className="text-[32px] lg:text-6xl font-extrabold text-zinc-900">
               Payez ou transférez de l’argent vers l’Afrique
             </h2>
 
-            <p className="mt-3 text-xs">
+            <p className="mt-3 text-xs lg:text-base">
               {`Envoyez de l’argent de l’Afrique, l'Europe, l'Asie, l'Amérique et l'Océanie vers l’Afrique sur des portefeuilles mobile sur les réseaux populaires, vous pouvez envoyer de l’argent à tout moment depuis n’importe quelle carte Visa ou Mastercard, en toute sécurité.`}
               <br />
               {`Vous pouvez aussi générer des liens de paiement pour vos services et utiliser nos API all in one pour vos E-Commerce.`}
             </p>
           </section>
 
-          <section className="mt-3 pt-10">
+          <section className="mt-3 pt-10 lg:w-[360px] lg:pb-10 lg:px-4 flex-none">
             <form>
               <div className="gap-1 py-2 grid grid-cols-1">
                 <Input
@@ -259,7 +265,7 @@ export default function Home() {
               </div>
 
               <div className="mt-3">
-                <button className="bg-forest-green hover:bg-orange-peel transition-all duration-100 rounded py-3 block w-full text-center text-white font-semibold">
+                <button className="btn btn-block">
                   Continuer
                 </button>
               </div>
@@ -269,7 +275,7 @@ export default function Home() {
       </header>
 
       <section id="services">
-        <div className="py-7 grid grid-cols-3 gap-3 container">
+        <div className="py-7 lg:py-10 grid grid-cols-3 lg:flex gap-3 justify-center lg:gap-10 container">
           {data.services.map((service) => (
             <Service key={"service-" + service.icon} {...service} />
           ))}
@@ -278,21 +284,23 @@ export default function Home() {
 
       <section id="cta">
         <div className="bg-black/50 text-white text-center">
-          <div className="flex flex-col h-[150px] w-[200px] justify-center items-center mx-auto gap-1">
-            <div className="text-2xl font-bold">Rapide & sécurisé</div>
+          <div className="flex flex-col h-[150px] lg:h-[300px] w-[200px] lg:w-auto justify-center items-center mx-auto gap-1">
+            <div className="text-2xl lg:text-5xl font-bold">
+              Rapide & sécurisé
+            </div>
 
-            <p>En moyenne 2mins par transaction</p>
+            <p className="lg:text-xl">En moyenne 2mins par transaction</p>
           </div>
         </div>
       </section>
 
       <section id="infos" className="bg-gray-100">
-        <div className="container py-10 grid grid-cols-1 gap-3">
+        <div className="container py-10 grid grid-cols-1 gap-3 lg:gap-10">
           <h2 className="font-bold text-zinc-900 text-2xl text-center">
             Pourquoi nous choisir ?
           </h2>
 
-          <div className="mt-3 grid grid-cols-1 gap-3">
+          <div className="mt-3 grid grid-cols-1 lg:flex justify-center gap-3 lg:gap-10">
             {data.infos.map((info) => (
               <Info key={"info-" + info.icon} {...info} />
             ))}
@@ -302,7 +310,7 @@ export default function Home() {
 
       <section id="more-infos" className="bg-white">
         <div className="container py-10 grid grid-cols-1 gap-3">
-          <div className="mt-3 grid grid-cols-1 gap-3">
+          <div className="mt-3 grid grid-cols-1 lg:flex justify-center gap-3 lg:gap-10">
             {data.moreInfos.map((info) => (
               <Info key={"info-" + info.icon} {...info} />
             ))}
@@ -311,19 +319,21 @@ export default function Home() {
       </section>
 
       <section id="testimonials" className="bg-white">
-        <div className="container py-10 grid grid-cols-1 gap-4">
-          <h2 className="font-bold text-zinc-900 text-2xl text-center">
+        <div className="container py-10 space-y-4 lg:space-y-20">
+          <h2 className="font-bold text-zinc-900 text-2xl lg:text-5xl text-center">
             Ce qu’ils disent de nous
           </h2>
 
-          <div className="py-2.5">
+          <div className="py-2.5 lg:py-0">
             <OwlCarousel
               key="testimonials-carousel"
+              className="owl-theme"
               role="list"
               responsive={{
                 0: { items: 1 },
-                768: { items: 2 },
-                1280: { items: 3 },
+                640: { items: 2 },
+                768: { items: 3 },
+                1024: { items: 4 },
               }}
               margin={12}
               stagePadding={24}
