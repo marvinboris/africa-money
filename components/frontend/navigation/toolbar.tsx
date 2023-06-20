@@ -3,7 +3,7 @@
 import { Popover, Transition } from "@headlessui/react";
 import Link from "next/link";
 import React from "react";
-import { FaBars, FaTimesCircle } from "react-icons/fa";
+import { FaBars, FaTimesCircle, FaUserCircle } from "react-icons/fa";
 
 import NavItem from "./nav-item";
 import Logo from "@/components/ui/logo";
@@ -42,7 +42,7 @@ const MobileNavItem = ({ item, close }: MobileNavItemProps) => (
 
 export default function Toolbar() {
   return (
-    <Popover className=" z-30 top-0 bg-white py-4">
+    <Popover className="sticky z-30 top-0 bg-white py-4">
       {({ close }) => (
         <>
           <div className="container flex items-center">
@@ -78,6 +78,12 @@ export default function Toolbar() {
                 Se Connecter
               </NavItem>
             </nav>
+
+            <div className="lg:hidden ml-auto">
+              <Link href="/profile">
+                <FaUserCircle className="h-6 w-6 text-zinc-800" />
+              </Link>
+            </div>
           </div>
 
           <Popover.Overlay className="fixed inset-x-0 top-0 z-40 h-screen bg-black/20 backdrop-blur-sm backdrop-filter dark:bg-zinc-900/80 md:hidden" />
@@ -102,7 +108,10 @@ export default function Toolbar() {
 
                   <Popover.Button className="flex h-6 w-6 items-center justify-center outline-none">
                     <span className="sr-only">Fermer le menu</span>
-                    <FaTimesCircle className="h-6 w-6 text-zinc-900" aria-hidden="true" />
+                    <FaTimesCircle
+                      className="h-6 w-6 text-zinc-900"
+                      aria-hidden="true"
+                    />
                   </Popover.Button>
                 </div>
 

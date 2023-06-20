@@ -1,6 +1,6 @@
 type Props = React.ComponentProps<"input"> & {
   label: React.ReactNode;
-  append: React.ReactNode;
+  append?: React.ReactNode;
 };
 const Input = (props: Props) => (
   <div className="py-2 px-5 rounded border-[.5px] border-gray-400 gap-3 flex justify-between items-center">
@@ -15,11 +15,15 @@ const Input = (props: Props) => (
       />
     </div>
 
-    <div className="flex-none h-7 w-[.5px] bg-gray-400" />
+    {props.append ? (
+      <>
+        <div className="flex-none h-7 w-[.5px] bg-gray-400" />
 
-    <div className="flex-none w-[60px] h-full px-2 flex items-center text-sm">
-      {props.append}
-    </div>
+        <div className="flex-none w-[60px] h-full px-2 flex items-center text-sm">
+          {props.append}
+        </div>
+      </>
+    ) : null}
   </div>
 );
 

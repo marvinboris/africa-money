@@ -105,13 +105,14 @@ export default function Hero() {
                         <option value="eur">EUR</option>
                       </select>
                     }
-                    defaultValue="1500,00"
+                    defaultValue="1500.00"
                   />
                   <Input
                     label="Le destinataire reçoit"
+                    type="number"
                     append="XAF"
                     readOnly
-                    defaultValue="1350,00"
+                    defaultValue="1350.00"
                   />
                 </div>
 
