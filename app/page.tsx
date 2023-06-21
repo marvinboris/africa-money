@@ -11,7 +11,7 @@ function getData() {
   return {
     services: [
       {
-        href: "/",
+        href: "/send-money",
         icon: "home-service-1",
         children: "Recharge OM & MOMO via Visa et Mastercard",
       },
