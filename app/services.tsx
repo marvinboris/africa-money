@@ -1,12 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
+  href: string;
   icon: string;
   children: string;
 };
 function Service(props: Props) {
   return (
-    <div className="flex flex-col items-center gap-3 lg:w-[200px]">
+    <Link
+      href={props.href}
+      className="flex flex-col items-center gap-3 lg:w-[200px]"
+    >
       <div className="flex-none h-12">
         <Image
           src={"/images/" + props.icon + ".svg"}
@@ -18,7 +23,7 @@ function Service(props: Props) {
       </div>
 
       <p className="text-center text-xs">{props.children}</p>
-    </div>
+    </Link>
   );
 }
 

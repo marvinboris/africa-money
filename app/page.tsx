@@ -11,11 +11,20 @@ function getData() {
   return {
     services: [
       {
+        href: "/",
         icon: "home-service-1",
         children: "Recharge OM & MOMO via Visa et Mastercard",
       },
-      { icon: "home-service-2", children: "Lien de paiement généré" },
-      { icon: "home-service-3", children: "Paiement de facture" },
+      {
+        href: "/generate-link",
+        icon: "home-service-2",
+        children: "Lien de paiement généré",
+      },
+      {
+        href: "/pay-bill",
+        icon: "home-service-3",
+        children: "Paiement de facture",
+      },
     ],
     infos: [
       {
