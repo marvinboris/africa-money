@@ -1,6 +1,10 @@
+"use client";
+
 import Mode from "@/components/frontend/ui/mode";
 import Input from "@/components/frontend/ui/form/input";
 import PageLayout from "@/components/frontend/ui/page-layout";
+
+import { handleSubmit } from "./actions";
 
 export default function Client() {
   return (
@@ -12,7 +16,13 @@ export default function Client() {
         </span>
       }
     >
-      <form className="w-full py-4 space-y-3">
+      <form className="w-full py-4 space-y-3" action={handleSubmit}>
+        <input type="hidden" name="payItemId" value="1" />
+        <input type="hidden" name="external_id" value="1" />
+        <input type="hidden" name="payer_name" value="Boris Ndouma" />
+        <input type="hidden" name="payer_email" value="jaris.ultio.21@gmail.com" />
+        <input type="hidden" name="tel" value="237655588688" />
+
         <div className="py-3 grid grid-cols-1 gap-2 font-semibold">
           <Mode
             id="to-country"
@@ -24,7 +34,10 @@ export default function Client() {
             id="bill-type"
             label="Choisir une facture"
             name="bill_type"
-            options={[{ value: "electricity", children: "Electricité" }]}
+            options={[
+              { value: "eneo", children: "Electricité" },
+              { value: "camwater", children: "Eau" },
+            ]}
           />
         </div>
 
@@ -38,8 +51,8 @@ export default function Client() {
             label="Montant"
             type="number"
             append="XAF"
-            readOnly
-            defaultValue="1350.00"
+            name="amount"
+            defaultValue="1350"
           />
         </div>
 
@@ -48,7 +61,10 @@ export default function Client() {
             id="payment-method"
             label="Mode de paiement"
             name="payment_method"
-            options={[{ value: "bank-transfer", children: "Virement bancaire" }]}
+            options={[
+              { value: "visa", children: "Visa" },
+              { value: "mastercard", children: "Mastercard" },
+            ]}
           />
         </div>
 

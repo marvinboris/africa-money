@@ -41,7 +41,7 @@ export default function Hero() {
             Payez ou transférez de l’argent vers l’Afrique
           </h2>
 
-          <p className="mt-3 text-xs lg:text-base">
+          <p className="mt-3 text-sm lg:text-base">
             {`Envoyez de l’argent de l’Afrique, l'Europe, l'Asie, l'Amérique et l'Océanie vers l’Afrique sur des portefeuilles mobile sur les réseaux populaires, vous pouvez envoyer de l’argent à tout moment depuis n’importe quelle carte Visa ou Mastercard, en toute sécurité.`}
             <br />
             {`Vous pouvez aussi générer des liens de paiement pour vos services et utiliser nos API all in one pour vos E-Commerce.`}
@@ -128,14 +128,19 @@ export default function Hero() {
                     id="payment-method"
                     label="Mode de paiement"
                     name="payment_method"
-                    options={[{ value: "mastercard", children: "Mastercard" }]}
+                    options={[
+                      { value: "visa", children: "Visa" },
+                      { value: "mastercard", children: "Mastercard" },
+                    ]}
                   />
                   <Mode
                     id="receiving-mode"
                     label="Mode de réception"
                     name="receiving_mode"
                     options={[
-                      { value: "orange-money", children: "Orange Money" },
+                      { value: "momo", children: "MTN Mobile Money" },
+                      { value: "om", children: "Orange Money" },
+                      { value: "ym", children: "Yoomee Money" },
                     ]}
                   />
                 </div>

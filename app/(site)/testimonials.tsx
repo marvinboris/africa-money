@@ -9,7 +9,7 @@ import { classNames } from "@/utils/helpers";
 type Props = {
   photo: string;
   name: string;
-  index: number;
+  index?: number;
   children: string;
 };
 function Testimonial(props: Props) {
@@ -17,7 +17,7 @@ function Testimonial(props: Props) {
     <div
       className={classNames(
         "px-7 py-5 lg:py-10 flex flex-col items-center text-center h-full rounded-lg",
-        props.index % 2 === 0 ? "bg-gray-100" : "bg-orange-peel"
+        props.index! % 2 === 0 ? "bg-gray-100" : "bg-orange-peel"
       )}
     >
       <div className="text-center">
@@ -43,15 +43,13 @@ function Testimonial(props: Props) {
 export default function Testimonials({
   testimonials: _testimonials,
 }: {
-  testimonials: Omit<Props, "index">[];
+  testimonials: Props[];
 }) {
-  const [testimonials, setTestimonials] = React.useState<
-    Omit<Props, "index">[]
-  >([]);
+  const [testimonials, setTestimonials] = React.useState<Props[]>([]);
 
   React.useEffect(() => {
     setTestimonials(_testimonials);
-  }, []);
+  }, [_testimonials]);
 
   return (
     <section id="testimonials" className="bg-white">

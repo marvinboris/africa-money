@@ -49,13 +49,20 @@ export default function Client() {
             id="payment-method"
             label="Mode de paiement"
             name="payment_method"
-            options={[{ value: "bank-transfer", children: "Virement bancaire" }]}
+            options={[
+              { value: "visa", children: "Visa" },
+              { value: "mastercard", children: "Mastercard" },
+            ]}
           />
           <Mode
             id="receiving-mode"
             label="Mode de réception"
             name="receiving_mode"
-            options={[{ value: "orange-money", children: "Orange Money" }]}
+            options={[
+              { value: "momo", children: "MTN Mobile Money" },
+              { value: "om", children: "Orange Money" },
+              { value: "ym", children: "Yoomee Money" },
+            ]}
           />
         </div>
 
