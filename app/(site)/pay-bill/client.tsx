@@ -64,6 +64,9 @@ export default function Client() {
             options={[
               { value: "visa", children: "Visa" },
               { value: "mastercard", children: "Mastercard" },
+              { value: "momo", children: "MTN Mobile Money" },
+              { value: "om", children: "Orange Money" },
+              { value: "ym", children: "Yoomee Money" },
             ]}
           />
         </div>
