@@ -42,9 +42,7 @@ export default function Hero() {
           </h2>
 
           <p className="mt-3 text-sm lg:text-base">
-            {`Envoyez de l’argent de l’Afrique, l'Europe, l'Asie, l'Amérique et l'Océanie vers l’Afrique sur des portefeuilles mobile sur les réseaux populaires, vous pouvez envoyer de l’argent à tout moment depuis n’importe quelle carte Visa ou Mastercard, en toute sécurité.`}
-            <br />
-            {`Vous pouvez aussi générer des liens de paiement pour vos services et utiliser nos API all in one pour vos E-Commerce.`}
+            {`Envoyez de l’argent de l'Europe, l’Afrique , l'Asie, l'Amérique et l'Océanie vers l’Afrique sur des portefeuilles mobile sur les réseaux populaires, vous pouvez envoyer de l’argent à tout moment depuis n’importe quelle Visa ou Mastercard, en toute sécurité.`}
           </p>
         </section>
 
