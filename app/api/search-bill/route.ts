@@ -1,4 +1,4 @@
-import { SearchBillOperation, authenticate, searchBill } from "../helpers";
+import { SearchBillOperation, authenticate, searchBill } from "../helpers/mobile-money";
 
 export async function POST(req: Request) {
   try {

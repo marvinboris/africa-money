@@ -1,4 +1,4 @@
-import { authenticate, getTransactionStatus } from "../../helpers";
+import { authenticate, getTransactionStatus } from "../../helpers/mobile-money";
 
 export async function GET(
   req: Request,

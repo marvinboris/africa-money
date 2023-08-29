@@ -1,6 +1,6 @@
 "use server";
 
-import { PayBillOperation, authenticate, payBill } from "../../api/helpers";
+import { PayBillOperation, authenticate, payBill } from "../../api/helpers/mobile-money";
 
 export const handleSubmit = async (data: FormData) => {
   const body: PayBillOperation = {

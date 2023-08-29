@@ -1,7 +1,7 @@
-type Props = {
+import React, { ChangeEvent } from "react";
+
+type Props = React.ComponentProps<"select"> & {
   label: React.ReactNode;
-  id: string;
-  name: string;
   options: {
     value: string;
     children: React.ReactNode;
@@ -14,6 +14,7 @@ export default function Mode(props: Props) {
       <select
         name={props.name}
         id={props.id}
+        onChange={props.onChange}
         className="border-[.5px] border-gray-400 rounded py-1 px-4 text-forest-green bg-transparent"
       >
         {props.options.map((o, i) => (

@@ -3,6 +3,8 @@
 import Link from "next/link";
 import React from "react";
 
+import { handleSubmit } from "./actions";
+
 import Input from "@/components/ui/form/input";
 import Select from "@/components/ui/form/select";
 import PageLayout from "@/components/frontend/ui/page-layout";
@@ -48,7 +50,7 @@ export default function Client({ countries }: Props) {
         </>
       }
     >
-      <form className="w-full py-4 space-y-3">
+      <form className="w-full py-4 space-y-3" action={handleSubmit}>
         <Input
           label="Email :"
           id="email"

@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    serverActions: true,
-  },
-};
+const nextConfig = {};
 
 module.exports = nextConfig;
+
+module.exports = {
+  experimental: {
+    serverComponentsExternalPackages: ["mongoose"],
+    serverActions: true,
+  },
+  webpack(config) {
+    config.experiments = { ...config.experiments, topLevelAwait: true };
+    return config;
+  },
+};

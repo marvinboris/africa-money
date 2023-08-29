@@ -1,4 +1,4 @@
-import { PayBillOperation, authenticate, payBill } from "../helpers";
+import { PayBillOperation, authenticate, payBill } from "../helpers/mobile-money";
 
 export async function POST(req: Request) {
   try {

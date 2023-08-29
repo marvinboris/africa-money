@@ -1,4 +1,4 @@
-import { BuyAirtimeOperationBody, authenticate, buyAirtime } from "../helpers";
+import { BuyAirtimeOperationBody, authenticate, buyAirtime } from "../helpers/mobile-money";
 
 export async function POST(req: Request) {
   try {
